@@ -15,10 +15,42 @@ margin padding y fuente*/
   font-size: 18px
 }
 
-@media only screen and (max-width:550px) {
-  * {
-    font-size:15px;
+
+
+
+@media only screen and (max-width:420px) {
+  body {
+    position:relative;
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows:1fr 10fr 1fr;
+    grid-template-areas:
+    "header"
+    "main"
+    "main"
+    "main"
+    "footer";
+    width:100%;
+    background-size: cover;
+    height: 100vh;
   }
+
+  header {
+    width: 100vw;
+  }
+.footer {
+  justify-self:flex-end;
+}
+}
+
+@media only screen and (max-width:600px) {
+  * {
+    font-size:14px;
+  }
+}
+
+@media only screen and (max-width:320px) {
+  * {font-size:10px}
 }
 /*Fuente de letra para títulos*/
 h1, h2 {
@@ -128,7 +160,9 @@ grid-template y posición*/
   grid-area: mainGrid__aside;
 }
 
-.mainGrid__aside
+.mainGrid__aside {
+  margin: 10px 20px;
+}
 /*imagen del main
 posición y tamaño*/
 .logo {
@@ -167,7 +201,7 @@ alineación article y posicionamiento*/
 color, borde, alineación*/
 .footer {
   position: absolute;
-  top: 99vh;
+  top: 100vh;
   display: flex;
   width: 100%;
   background-color: #fff;
