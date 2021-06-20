@@ -12,10 +12,24 @@ margin padding y fuente*/
   padding: 0;
   font-family: Montserrat, cursive;
   box-sizing: border-box;
+  font-size: 18px
+}
+
+@media only screen and (max-width:550px) {
+  * {
+    font-size:15px;
+  }
 }
 /*Fuente de letra para títulos*/
-h1, h2, h3, h4, h5, h6 {
-  font-family: Viaoda Libre, cursive;
+h1, h2 {
+  font-family: Inter, sans-serif;
+  font-weight: 200 ;
+  font-size: 25px;
+  letter-spacing: 0.3em;
+}
+
+h3, h4, h5, h6 {
+  font-family: Dosis, sans-serif;
 }
 /*Enlaces sin decoración*/
 a {
@@ -27,7 +41,7 @@ li {
   list-style-type: none;
 }
 *::selection {
-  color: --rosaclaro;
+  color: var(--rosaclaro);
   background-color: #fff;
 }
 img {width: 100%;}
@@ -57,15 +71,16 @@ fondo blanco del header, margen, padding, borde redondeado...*/
 }
 /*Ponisworld logo, color, borde, padding y radio*/
 .nav__ul-h2 {
-  color: var(--rosafuerte);
+  color: var(--rosaclaro);
   border: 2px solid var(--rosaclaro);
-  padding: 5px 7px 5px 10px;
+  padding: 5px 7px 5px 15px;
   border-radius: 40px;
+  font-size: 1.2em;
 }
 /*Efecto hover para el logo*/
 .nav__ul-h2:hover {
   color: #fff;
-  background-color: var(--rosafuerte);
+  background-color: var(--rosaclaro);
   transition: all 1s ease-in;
 }
 /*Último enlace más padding:
@@ -101,59 +116,58 @@ grid-template y posición*/
 .mainGrid {
   color: #fff;
   display: grid;
-  justify-content: center;
-  align-content: center;
+  align-items: center;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr;
   grid-template-areas:
-  "mainGrid__article mainGrid__aside"
   "mainGrid__article mainGrid__aside";
-  position: relative;
+
 }
 /*grid area y aside*/
 .mainGrid__aside {
   grid-area: mainGrid__aside;
-  display: flex;
-  justify-content: center;
 }
+
+.mainGrid__aside
 /*imagen del main
 posición y tamaño*/
 .logo {
   width: 10em;
   height: 10em;
-  position: absolute;
-  top: 25vh;
+}
+.mainGrid__aside {
+  margin: auto;
 }
 /*Grid area
 alineación article y posicionamiento*/
 .mainGrid__article {
   grid-area: mainGrid__article;
-  justify-self: flex-end;
-  position: absolute;
-  top: 40vh;
+}
+
+.mainGrid__article {
   display: flex;
-  justify-content: flex-end;
-  margin: 10px 20px;
+  flex-direction: column;
+  padding: 10px 20px;
 }
 
-
-/*más posicionamiento del article*/
-.mainGrid__article h1 {
-  position: absolute;
-  top: -20vw;
-  align-self: flex-end;
+.mainGrid__article > h1 {
+  text-align: right;
+  padding: 10vh 0;
 }
 
-@media only screen and (max-width:380px) {
-  .mainGrid__article h1 {
-    top: -20vh;
-  }
+.mainGrid__article > p {
+  margin: auto;
 }
+
+.mainGrid__aside > .logo {
+
+}
+
 /*posicionamiento del footer
 color, borde, alineación*/
 .footer {
   position: absolute;
-  top: 94vh;
+  top: 99vh;
   display: flex;
   width: 100%;
   background-color: #fff;
@@ -162,18 +176,16 @@ color, borde, alineación*/
   align-items: center;
 }
 
-
+.aboutGrid__article > h2 {
+  font-weight: bolder;
+}
 /*tamaño logos*/
 .logo-social {
   width: auto;
   height: 2em;
-  margin: 5px 0 0 0;
+  margin: 10px 0 0 0;
 }
 
-/*fuente pequenita para los créditos*/
-.credits {
-  font-size: 12px;
-}
 /*GRID DEL ABOUT 2X2*/
 .aboutGrid {
   display: grid;
@@ -203,7 +215,12 @@ color, borde, alineación*/
   margin: 20px 0;
 }
 
-@media only screen and (max-width: 500px) {
+.aboutGrid__aside > div > h3 {
+  letter-spacing: 0.3em;
+  text-align: right;
+}
+
+@media only screen and (max-width: 550px) {
   .nav__ul-first {
     display: none;
   }
@@ -244,11 +261,31 @@ GRID Y SECTIONS*/
 }
 .knowGrid__section {
   background-color: #fff;
-  color: var(--rosafuerte);
+  color: rgb(253,203,205);
   width: 75vw;
   height: 20vh;
   align-self: center;
   box-shadow: 62px 29px 0px 3px  rgba(253,203,203,0.75);
   text-align:center;
   padding: 10px 20px;
+}
+
+.knowGrid__section > h3 {
+  color: var(--naranja);
+  letter-spacing: 0.3em;
+}
+
+.knowGrid__section > ul {
+  margin: 20px 10px;
+}
+@media only screen and (max-width:400px) {
+.knowGrid__section > ul {
+  margin: auto;
+}
+}
+
+@media only screen and (min-width:600px) {
+  .knowGrid__section {
+    font-weight: 900;
+  }
 }
