@@ -10,7 +10,7 @@ margin padding y fuente*/
 * {
   margin: 0;
   padding: 0;
-  font-family: Montserrat, cursive;
+  font-family: 'Montserrat', cursive;
   box-sizing: border-box;
   font-size: 18px
 }
@@ -22,14 +22,14 @@ margin padding y fuente*/
 }
 /*Fuente de letra para títulos*/
 h1, h2 {
-  font-family: Inter, sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 200 ;
   font-size: 25px;
   letter-spacing: 0.3em;
 }
 
 h3, h4, h5, h6 {
-  font-family: Dosis, sans-serif;
+  font-family: 'Dosis', sans-serif;
 }
 /*Enlaces sin decoración*/
 a {
